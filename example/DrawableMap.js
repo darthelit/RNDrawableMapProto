@@ -8,7 +8,11 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import MapView, {ProviderPropType, Polyline} from 'react-native-maps';
+import MapView, {
+  ProviderPropType,
+  Polyline,
+  PROVIDER_GOOGLE,
+} from 'react-native-maps';
 
 const {width, height} = Dimensions.get('window');
 
@@ -69,7 +73,7 @@ class DrawableMap extends React.Component {
     return (
       <View style={styles.container}>
         <MapView
-          provider={this.props.provider}
+          provider={PROVIDER_GOOGLE}
           style={styles.map}
           initialRegion={this.state.region}
           showsUserLocation
@@ -193,7 +197,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: 20,
     backgroundColor: 'transparent',
-    bottom: '110%',
+    textAlignVertical: 'bottom',
   },
 });
 
